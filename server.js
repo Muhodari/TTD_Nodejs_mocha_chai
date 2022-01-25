@@ -4,7 +4,7 @@ let app = express();
 let mongoose = require('mongoose');
 let morgan = require('morgan');
 let bodyParser = require('body-parser');
-let port = 8080;
+let port = 3000;
 let book = require('./app/routes/book');
 let config = require('config'); //we load the db location from the JSON files
 //db options
@@ -14,7 +14,12 @@ let options = {
               }; 
 
 //db connection      
-mongoose.connect(config.DBHost, options);
+mongoose.connect("mongodb+srv://muhodari:muhodari@cluster0.rcaf6.mongodb.net/booksStore?retryWrites=true&w=majority")
+.then(()=>{
+  console.log('connected to database successfully')
+}).catch((error)=>{
+	console.log(error)
+})
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 

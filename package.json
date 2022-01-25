@@ -3,22 +3,23 @@
   "version": "1.0.0",
   "description": "A bookstore API",
   "main": "server.js",
-  "author": "Sam",
+  "author": "sage",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.1",
     "config": "^1.20.1",
     "express": "^4.13.4",
-    "mongoose": "^4.4.15",
-    "morgan": "^1.7.0"
+    "mongoose": "^6.1.8",
+    "morgan": "^1.7.0",
+    "nodemon": "^2.0.15"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "chai-http": "^2.0.1",
-    "mocha": "^2.4.5"
+    "chai-http": "^4.3.0",
+    "mocha": "^9.2.0"
   },
   "scripts": {
-    "start": "SET NODE_ENV=dev && node server.js",
+    "start": "SET NODE_ENV=dev && nodemon server.js",
     "test": "mocha --timeout 10000"
   }
 }
